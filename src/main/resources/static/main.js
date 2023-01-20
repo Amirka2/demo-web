@@ -1,1 +1,3 @@
-alert("debug");
+window.onload = () => {
+    alert("debug");
+}
