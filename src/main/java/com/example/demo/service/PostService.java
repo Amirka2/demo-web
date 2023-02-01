@@ -8,13 +8,13 @@ import java.util.*;
 
 @Service
 public class PostService {
-    List<Post> posts = new ArrayList<>();
+    private final List<Post> posts = new ArrayList<>();
 
     public List<Post> listAllPosts() {
         return posts;
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post(posts.size(), text, new Date()));
     }
 }
