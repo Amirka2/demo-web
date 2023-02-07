@@ -1,19 +1,29 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.Random;
 
-public class Post {
+@Entity
+public class Post implements Serializable {
+
+    @Id
+    @GeneratedValue
+    private Long id;
     private String text;
     private Integer likes;
     private Date creationDate;
-    private long id;
 
-    public Post(long id, String text, Date creationDate) {
-        this.text = text;
-        this.creationDate = creationDate;
-        this.likes = 0;
-        this.id = id;
+    public Post() {
+    }
+
+    public Post(Long id, String text, Date creationDate) {
+    this.text = text;
+    this.creationDate = creationDate;
+    this.likes = 0;
+    this.id = id;
     }
 
     public String getText() {
